@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   GLOBAL STYLES
+   ============================================================================ */
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply bg-white text-maxwill-secondary font-sans;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================================================================
+   FOCUS STATES - ACCESSIBILITY (WCAG AA)
+   ============================================================================ */
+
+:focus-visible {
+  @apply outline-none ring-2 ring-maxwill-primary ring-offset-2;
+}
+
+button:focus-visible {
+  @apply ring-2 ring-maxwill-primary ring-offset-2;
+}
+
+a:focus-visible {
+  @apply ring-2 ring-maxwill-primary ring-offset-2 rounded;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  @apply ring-2 ring-maxwill-primary ring-offset-2;
+}
+
+/* ============================================================================
+   SELECTION
+   ============================================================================ */
+
+::selection {
+  @apply bg-maxwill-primary text-white;
+}
+
+::-moz-selection {
+  @apply bg-maxwill-primary text-white;
+}
+
+/* ============================================================================
+   SCROLLBAR STYLING
+   ============================================================================ */
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-maxwill-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-maxwill-gray-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-maxwill-gray-500;
+}
+
+/* ============================================================================
+   TYPOGRAPHY DEFAULTS
+   ============================================================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-display font-bold;
+}
+
+p {
+  @apply leading-relaxed;
+}
+
+a {
+  @apply transition-colors duration-200 text-maxwill-primary hover:text-maxwill-secondary;
+}
+
+button {
+  @apply transition-all duration-300;
+}
+
+/* ============================================================================
+   FORM ELEMENTS
+   ============================================================================ */
+
+input,
+textarea,
+select {
+  @apply border border-maxwill-gray-200 rounded-md focus:border-maxwill-primary transition-colors;
+}
+
+input::placeholder,
+textarea::placeholder {
+  @apply text-maxwill-gray-400;
+}
+
+/* ============================================================================
+   REDUCE MOTION SUPPORT - Accessibility
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+
+@media print {
+  body {
+    @apply bg-white;
+  }
+
+  a {
+    @apply underline;
+  }
+
+  button,
+  input[type='button'],
+  input[type='submit'] {
+    @apply border border-maxwill-gray-300;
+  }
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+.container-responsive {
+  @apply mx-auto px-4 sm:px-6 tablet:px-8 desktop:px-12;
+}
+
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.glass-dark {
+  @apply bg-black/10 backdrop-blur-md border border-black/20;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-maxwill-primary to-red-600 bg-clip-text text-transparent;
+}
+
+.transition-smooth {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.transition-premium {
+  @apply transition-all duration-500 ease-out;
+}
