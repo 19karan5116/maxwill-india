@@ -20,7 +20,9 @@
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.394.0",
     "clsx": "^2.1.0",
-    "tailwind-merge": "^2.4.0"
+    "tailwind-merge": "^2.4.0",
+    "class-variance-authority": "^0.7.0",
+    "@radix-ui/slot": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
